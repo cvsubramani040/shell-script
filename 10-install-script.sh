@@ -19,10 +19,10 @@ then
    then
       echo "Installing tree ---FAILURE"
       exit 1
-   elso
+   else
       echo "Installing tree ---SUCCESS"
     fi
-elso
+else
    echo "tree is already installed--Installed" 
 fi   
 
@@ -34,10 +34,10 @@ then
    then
       echo "Installing MYSQL ---FAILURE"
       exit 1
-   elso
+   else
       echo "Installing MYSQL ---SUCCESS"
    fi
-elso
+else
    echo "MYSQl is already installed--Installed" 
 fi 
 
@@ -51,9 +51,9 @@ then
    then
       echo "Installing git ---FAILURE"
       exit 1
-   elso
+   else
       echo "Installing git ---SUCCESS"
    fi
-elso
+else
    echo "Git is already installed--Installed" 
 fi 
