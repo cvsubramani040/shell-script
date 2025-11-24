@@ -34,11 +34,19 @@ fi
 # fi
 
 
-# apt install git -y
-# if [ $? -ne 0 ]
-# then
-#    echo "Installing git ---FAILURE"
-#    exit 1
-# elso
-#    echo "Installing git ---SUCCESS"
-# fi
+
+dpkg -l | grep git
+
+if [ $? -ne 0 ]
+then
+   apt install git -y
+   if [ $? -ne 0 ]
+   then
+      echo "Installing git ---FAILURE"
+      exit 1
+   elso
+      echo "Installing git ---SUCCESS"
+   fi
+elso
+   echo "Git is already installed--Installed" 
+fi 
