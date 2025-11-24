@@ -1,9 +1,6 @@
 #!/bin/bash
-
+echo "Script executed at: $(date)"
 a=$1
 b=$2
-TIME_STAMP=$(date)
-
-echo "Script excuted at: $TIME_STAMP"
-SUM=$((a+b))
-echo "SUM of $a and $b is : $SUM"
+sum=$((a + b))
+echo "Sum of $a and $b is: $sum"
