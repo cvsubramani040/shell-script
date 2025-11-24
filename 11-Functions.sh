@@ -6,7 +6,7 @@ VALIDATE(){
     if [ $1 -ne 0 ]
     then
        echo "$2 --FAILUR"
-    elso
+    else
        echo "$2 --SUCCESS"
 }
 
@@ -23,7 +23,7 @@ if [ $? -ne 0 ]
 then
    apt install tree -y
    VALIDATE $? "Installing tree"
-elso
+else
    echo "tree is already installed--Installed" 
 fi   
 
@@ -32,7 +32,7 @@ if [ $? -ne 0 ]
 then
    apt install mysql-server -y 
    VALIDATE $? "Installing mysql-server"
-elso
+else
    echo "MYSQl is already installed--Installed" 
 fi 
 
@@ -43,6 +43,6 @@ if [ $? -ne 0 ]
 then
    apt install git -y
    VALIDATE $? "installing git"
-elso
+else
    echo "Git is already installed--Installed" 
 fi 
