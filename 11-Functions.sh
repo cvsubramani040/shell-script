@@ -8,6 +8,7 @@ VALIDATE(){
        echo "$2 --FAILUR"
     else
        echo "$2 --SUCCESS"
+    fi
 }
 
 if [ $USERID -ne 0 ]
@@ -17,7 +18,7 @@ then
 fi
 
 
-dpkg -l | grep tree
+dpkg -l | grep tree > /dev/null
 
 if [ $? -ne 0 ]
 then
@@ -27,7 +28,7 @@ else
    echo "tree is already installed--Installed" 
 fi   
 
-dpkg -l | grep mysql-server -y
+dpkg -l | grep mysql-server > /dev/null
 if [ $? -ne 0 ]
 then
    apt install mysql-server -y 
@@ -37,7 +38,7 @@ else
 fi 
 
 
-dpkg -l | grep git
+dpkg -l | grep git > /dev/null
 
 if [ $? -ne 0 ]
 then
