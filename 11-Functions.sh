@@ -2,6 +2,13 @@
 
 USERID=$(id -u)
 
+VALIDATE(){
+    if [ $1 -ne 0 ]
+    then
+       echo "$2 --FAILUR"
+    elso
+       echo "$2 --SUCCESS"
+}
 
 if [ $USERID -ne 0 ]
 then 
@@ -15,13 +22,7 @@ dpkg -l | grep tree
 if [ $? -ne 0 ]
 then
    apt install tree -y
-   if [ $? -ne 0 ]
-   then
-      echo "Installing tree ---FAILURE"
-      exit 1
-   elso
-      echo "Installing tree ---SUCCESS"
-    fi
+   VALIDATE $? "Installing tree"
 elso
    echo "tree is already installed--Installed" 
 fi   
@@ -30,13 +31,7 @@ dpkg -l | grep mysql-server -y
 if [ $? -ne 0 ]
 then
    apt install mysql-server -y 
-   if [ $? -ne 0 ]
-   then
-      echo "Installing MYSQL ---FAILURE"
-      exit 1
-   elso
-      echo "Installing MYSQL ---SUCCESS"
-   fi
+   VALIDATE $? "Installing mysql-server"
 elso
    echo "MYSQl is already installed--Installed" 
 fi 
@@ -47,13 +42,7 @@ dpkg -l | grep git
 if [ $? -ne 0 ]
 then
    apt install git -y
-   if [ $? -ne 0 ]
-   then
-      echo "Installing git ---FAILURE"
-      exit 1
-   elso
-      echo "Installing git ---SUCCESS"
-   fi
+   VALIDATE $? "installing git"
 elso
    echo "Git is already installed--Installed" 
 fi 
