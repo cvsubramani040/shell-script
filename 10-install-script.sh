@@ -25,10 +25,10 @@ elso
    echo "tree is already installed--Installed" 
 fi   
 
-dpkg -l | grep MYSQL
+dpkg -l | grep mysql-server -y
 if [ $? -ne 0 ]
 then
-   apt install MYSQL -y
+   apt install mysql-server -y 
    if [ $? -ne 0 ]
    then
       echo "Installing MYSQL ---FAILURE"
