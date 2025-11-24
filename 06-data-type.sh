@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-NUMBER1=$1
+NUMBER1=$1 #variables
 NUMBER2=$2
 
 TIMESTAMP=$(date)
