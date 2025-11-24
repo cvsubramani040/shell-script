@@ -9,21 +9,35 @@ then
 fi
 
 
-apt install mysqll -y
+dpkg -l | grep mysql
+
 if [ $? -ne 0 ]
 then
-   echo "Installing MYSQL ---FAILURE"
-   exit 1
+   apt install mysql -y
+   if [ $? -ne 0 ]
+   then
+      echo "Installing MYSQL ---FAILURE"
+      exit 1
+   elso
+      echo "Installing MYSQL ---SUCCESS"
+    fi
 elso
-   echo "Installing MYSQL ---SUCCESS"
-fi
+   echo "MYSQL is already installed--Installed"    
+# apt install mysql -y
+# if [ $? -ne 0 ]
+# then
+#    echo "Installing MYSQL ---FAILURE"
+#    exit 1
+# elso
+#    echo "Installing MYSQL ---SUCCESS"
+# fi
 
 
-apt install git -y
-if [ $? -ne 0 ]
-then
-   echo "Installing git ---FAILURE"
-   exit 1
-elso
-   echo "Installing git ---SUCCESS"
-fi
+# apt install git -y
+# if [ $? -ne 0 ]
+# then
+#    echo "Installing git ---FAILURE"
+#    exit 1
+# elso
+#    echo "Installing git ---SUCCESS"
+# fi
