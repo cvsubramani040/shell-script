@@ -9,20 +9,20 @@ then
 fi
 
 
-dpkg -l | grep mysql
+dpkg -l | grep tree
 
 if [ $? -ne 0 ]
 then
-   apt install mysql -y
+   apt install tree -y
    if [ $? -ne 0 ]
    then
-      echo "Installing MYSQL ---FAILURE"
+      echo "Installing tree ---FAILURE"
       exit 1
    elso
-      echo "Installing MYSQL ---SUCCESS"
+      echo "Installing tree ---SUCCESS"
     fi
 elso
-   echo "MYSQL is already installed--Installed" 
+   echo "tree is already installed--Installed" 
 fi   
 # apt install mysql -y
 # if [ $? -ne 0 ]
