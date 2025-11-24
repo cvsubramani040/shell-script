@@ -22,7 +22,8 @@ then
       echo "Installing MYSQL ---SUCCESS"
     fi
 elso
-   echo "MYSQL is already installed--Installed"    
+   echo "MYSQL is already installed--Installed" 
+fi   
 # apt install mysql -y
 # if [ $? -ne 0 ]
 # then
