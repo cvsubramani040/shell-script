@@ -24,15 +24,21 @@ then
 elso
    echo "tree is already installed--Installed" 
 fi   
-apt install mysql -y
+
+dpkg -l | grep MYSQL
 if [ $? -ne 0 ]
 then
-   echo "Installing MYSQL ---FAILURE"
-   exit 1
+   apt install MYSQL -y
+   if [ $? -ne 0 ]
+   then
+      echo "Installing MYSQL ---FAILURE"
+      exit 1
+   elso
+      echo "Installing MYSQL ---SUCCESS"
+   fi
 elso
-   echo "Installing MYSQL ---SUCCESS"
-fi
-
+   echo "MYSQl is already installed--Installed" 
+fi 
 
 
 dpkg -l | grep git
