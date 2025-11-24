@@ -2,7 +2,6 @@
 
 NUMBER=$1
 NUMBER=$2
-
 TIME_STAMP=$(date)
 
 echo "Script excuted at: $TIME_STAMP"
