@@ -24,14 +24,14 @@ then
 elso
    echo "tree is already installed--Installed" 
 fi   
-# apt install mysql -y
-# if [ $? -ne 0 ]
-# then
-#    echo "Installing MYSQL ---FAILURE"
-#    exit 1
-# elso
-#    echo "Installing MYSQL ---SUCCESS"
-# fi
+apt install mysql -y
+if [ $? -ne 0 ]
+then
+   echo "Installing MYSQL ---FAILURE"
+   exit 1
+elso
+   echo "Installing MYSQL ---SUCCESS"
+fi
 
 
 
