@@ -8,7 +8,7 @@ Y="\e[33m"
 LOGS_FOLDER="/var/log/shell-script.logs"
 LOGS_FILE=$(echo $0 | cut -d "." -f1)
 TIMESTAMP=$(date +%y-%m-%d-%H-%M-%S)
-LOG_FILE_NAME="$LOGS_FOLDER/$LOGS_FILE-$TIMESTMP.log"
+LOG_FILE_NAME="$LOGS_FOLDER/$LOGS_FILE-$TIMESTAMP.log"
 
 
 VALIDATE(){
@@ -20,7 +20,7 @@ VALIDATE(){
     fi
 }
 
-echo "Script started excuting at: $TIMESTAMP"&>>$LOG_FILE_NAME"
+echo "Script started excuting at: $TIMESTAMP"&>>$LOG_FILE_NAME
 
 if [ $USERID -ne 0 ]
 then 
