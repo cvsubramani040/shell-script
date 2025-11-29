@@ -35,10 +35,10 @@ fi
 
 for package in $@
 do
-   dpkg  -l $package -y &>>$LOG_FILE_NAME
+   dpkg -s $package  &>>$LOG_FILE_NAME
    if [ $? -ne 0 ]
     then
-        apt install $package -y &>>$LOG_FILE_NAME
+        apt install -y $package  &>>$LOG_FILE_NAME
         VALIDATE $? "Installing $package"
 
     else
