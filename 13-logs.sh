@@ -10,6 +10,11 @@ LOGS_FILE=$(echo $0 | cut -d "." -f1)
 TIMESTAMP=$(date +%y-%m-%d-%H-%M-%S)
 LOG_FILE_NAME="$LOGS_FOLDER/$LOGS_FILE-$TIMESTAMP.log"
 
+# Ensure logs folder exists
+if [ ! -d "$LOGS_FOLDER" ]; then
+   mkdir -p "$shellscript-logs"
+fi
+
 
 VALIDATE(){
     if [ $1 -ne 0 ]
