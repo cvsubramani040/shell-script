@@ -34,7 +34,7 @@ then
 fi
 
 
-dpkg -l | grep tree > /dev/null &>>$LOG_FILE_NAME
+dpkg -l | grep tree  &>>$LOG_FILE_NAME
 
 if [ $? -ne 0 ]
 then
@@ -44,7 +44,7 @@ else
    echo "tree is already installed--$Y Installed" 
 fi   
 
-dpkg -l | grep mysql-server > /dev/null &>>$LOG_FILE_NAME
+dpkg -l | grep mysql-server  &>>$LOG_FILE_NAME
 if [ $? -ne 0 ]
 then
    apt install mysql-server -y &>>$LOG_FILE_NAME
@@ -54,7 +54,7 @@ else
 fi 
 
 
-dpkg -l | grep git > /dev/null &>>$LOG_FILE_NAME
+dpkg -l | grep git  &>>$LOG_FILE_NAME
 
 if [ $? -ne 0 ]
 then
